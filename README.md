@@ -8,9 +8,10 @@
 
 > going to build 3 microservices.
 
-> service 1 : provide some data
-> service 2 : provide some data
-> service 3 : calls service1 and service2, gets the data , consolidate it
-			  sends back response.
+> service 1 : provide some data.
+
+> service 2 : provide some data.
+
+> service 3 : calls service1 and service2, gets the data , consolidate it  sends back response.
              
 			 
