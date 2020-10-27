@@ -2,8 +2,8 @@ package com.mesnuuu.movieinfoservice.models;
 
 public class Movie {
 
-	private String name;
 	private String movieId;
+	private String name;
 
 	public Movie( String movieId, String name) {
 		super();
