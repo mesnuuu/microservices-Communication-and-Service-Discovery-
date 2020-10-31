@@ -17,6 +17,7 @@
 
 	<properties>
 		<java.version>15</java.version>
+		<spring-cloud.version>Hoxton.SR8</spring-cloud.version>                  <!-- 1- add version to property -->
 	</properties>
 
 	<dependencies>
@@ -25,10 +26,13 @@
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-devtools</artifactId>
-			
+
 		</dependency>
 
-
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>                          <!-- 2 - add Eureka client dependency -->
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
 
 
 
@@ -50,6 +54,18 @@
 		</dependency>
 	</dependencies>
 
+	<dependencyManagement>                                                   <!-- 3 - add dependency management -->
+		<dependencies>
+			<dependency>
+				<groupId>org.springframework.cloud</groupId>
+				<artifactId>spring-cloud-dependencies</artifactId>
+				<version>${spring-cloud.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -58,5 +74,13 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<repositories>                                                               <!-- 4 - add repo -->
+		<repository>
+			<id>spring-milestones</id>
+			<name>Spring Milestones</name>
+			<url>https://repo.spring.io/milestone</url>
+		</repository>
+	</repositories>
 
 </project>
