@@ -23,8 +23,9 @@ public class MovieCatalogeResource {
 
 	@Autowired
 	private RestTemplate restTemplate;
-	private String ratingsDataServiceUrl = "http://localhost:8083/ratingsdata/user/fee";
-	private String movieInfoServiceUrl = "http://localhost:8082/movies/";
+	private String movieInfoServiceUrl = "http://movie-info-service:8082/movies/";
+	private String ratingsDataServiceUrl = "http://ratings-data-service:8083/ratingsdata/user/fee";
+	
 
 	@GetMapping("/catalog/{userId}")
 	public List<CatalogItem> getCatalog(@PathVariable("userId") String userId) {
